@@ -9,55 +9,63 @@
       margin: 0;
       height: 100vh;
       overflow: hidden;
-      font-family: 'Comic Sans MS', cursive;
       text-align: center;
-      background: linear-gradient(135deg, #ff4d6d, #ff758f, #ffd1dc);
-      color: white;
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      background: linear-gradient(
+        135deg,
+        #ffd6e8,
+        #ffe6c9,
+        #e6ddff
+      );
+      color: #4a2c2a;
     }
 
     h1 {
       margin-top: 30px;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      font-size: 36px;
+      font-weight: 600;
     }
 
     p {
-      font-size: 20px;
-      padding: 20px;
-      line-height: 1.6;
+      font-size: 19px;
+      line-height: 1.7;
+      padding: 10px;
     }
 
     .promise-box {
-      background: rgba(255, 255, 255, 0.18);
-      padding: 25px;
-      border-radius: 20px;
-      margin: 20px auto;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 30px;
+      border-radius: 22px;
+      margin: 30px auto;
       width: 85%;
-      max-width: 450px;
-      backdrop-filter: blur(8px);
+      max-width: 480px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      backdrop-filter: blur(10px);
     }
 
     button {
-      padding: 14px 28px;
-      font-size: 18px;
+      padding: 14px 32px;
+      font-size: 17px;
       border-radius: 30px;
       border: none;
       cursor: pointer;
       margin-top: 20px;
-      background: #ffffff;
-      color: #ff4d6d;
-      transition: 0.3s;
+      background: #ff6f91;
+      color: white;
+      transition: 0.3s ease;
+      font-weight: 500;
     }
 
     button:hover {
-      transform: scale(1.1);
-      background: #ffe3ea;
+      transform: scale(1.08);
+      background: #ff4f7b;
     }
 
     .heart {
       position: fixed;
       font-size: 26px;
       animation: float 6s linear infinite;
-      opacity: 0.85;
+      opacity: 0.8;
     }
 
     @keyframes float {
@@ -80,8 +88,9 @@
   <div class="promise-box" id="content">
     <p>
       Hey Dip,<br><br>
-      Today isn’t about big promises or perfect words.  
-      It’s about choosing each other — quietly, honestly, every day. ♥️
+      Promise Day isn’t about perfect words.  
+      It’s about choosing each other —  
+      in small moments, quiet days, and everything in between. ♥️
     </p>
 
     <button onclick="showPromises()">Read My Promises 🫱🏻‍🫲🏼</button>
@@ -93,12 +102,12 @@
         <p>
           Dip, I promise you this…<br><br>
 
-          🫱🏻‍🫲🏼 I promise to stand with you —  
+          🫱🏻‍🫲🏼 I promise to stand beside you,  
           not just when life is easy,  
-          but when it tests us the most. ♥️<br><br>
+          but when it feels heavy too. ♥️<br><br>
 
           🫱🏻‍🫲🏼 I promise to listen with patience,  
-          to understand even the words you don’t say. 🌙<br><br>
+          to understand you beyond words. 🌙<br><br>
 
           🫱🏻‍🫲🏼 I promise to grow with you,  
           to choose love over ego,  
@@ -115,7 +124,7 @@
     function finalMessage() {
       document.body.innerHTML = `
         <h1 style="margin-top:20vh;">♥️ Always You, Dip ♥️</h1>
-        <p>
+        <p style="max-width:600px; margin:auto;">
           This isn’t just a Promise Day message.<br>
           It’s my way of saying —<br><br>
 
