@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise Day ♥️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      background: linear-gradient(135deg, #ff4d6d, #ff758f, #ffd1dc);
+      color: white;
+    }
+
+    h1 {
+      margin-top: 30px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 20px;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .promise-box {
+      background: rgba(255, 255, 255, 0.18);
+      padding: 25px;
+      border-radius: 20px;
+      margin: 20px auto;
+      width: 85%;
+      max-width: 450px;
+      backdrop-filter: blur(8px);
+    }
+
+    button {
+      padding: 14px 28px;
+      font-size: 18px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      background: #ffffff;
+      color: #ff4d6d;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: #ffe3ea;
+    }
+
+    .heart {
+      position: fixed;
+      font-size: 26px;
+      animation: float 6s linear infinite;
+      opacity: 0.85;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>♥️ Happy Promise Day ♥️</h1>
+
+  <div class="promise-box" id="content">
+    <p>
+      Hey Dip,<br><br>
+      Today isn’t about big promises or perfect words.  
+      It’s about choosing each other — quietly, honestly, every day. ♥️
+    </p>
+
+    <button onclick="showPromises()">Read My Promises 🫱🏻‍🫲🏼</button>
+  </div>
+
+  <script>
+    function showPromises() {
+      document.getElementById("content").innerHTML = `
+        <p>
+          Dip, I promise you this…<br><br>
+
+          🫱🏻‍🫲🏼 I promise to stand with you —  
+          not just when life is easy,  
+          but when it tests us the most. ♥️<br><br>
+
+          🫱🏻‍🫲🏼 I promise to listen with patience,  
+          to understand even the words you don’t say. 🌙<br><br>
+
+          🫱🏻‍🫲🏼 I promise to grow with you,  
+          to choose love over ego,  
+          and us over everything else. ♥️<br><br>
+
+          No matter where life takes us,  
+          my hand will always reach for yours. 🫱🏻‍🫲🏼
+        </p>
+
+        <button onclick="finalMessage()">One Last Thing ♥️</button>
+      `;
+    }
+
+    function finalMessage() {
+      document.body.innerHTML = `
+        <h1 style="margin-top:20vh;">♥️ Always You, Dip ♥️</h1>
+        <p>
+          This isn’t just a Promise Day message.<br>
+          It’s my way of saying —<br><br>
+
+          I choose you.<br>
+          I trust you.<br>
+          And I promise to walk beside you — always. 🫱🏻‍🫲🏼
+        </p>
+      `;
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "♥️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    setInterval(createHeart, 900);
+  </script>
+
+</body>
+</html>
