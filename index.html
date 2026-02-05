@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Be My Valentine 💖</title>
+  <title>Be My Valentine ❤️</title>
 
   <style>
     body {
@@ -17,7 +17,7 @@
     h1 {
       margin-top: 15px;
       color: white;
-      text-shadow: 2px 2px 6px #ff3d68;
+      text-shadow: 2px 2px 6px #ff1e56;
     }
 
     #score {
@@ -28,17 +28,14 @@
 
     .heart {
       position: absolute;
-      font-size: 28px;
+      font-size: 30px;
       animation: fall linear forwards;
+      color: red;
     }
 
     @keyframes fall {
-      from {
-        transform: translateY(-10vh);
-      }
-      to {
-        transform: translateY(100vh);
-      }
+      from { transform: translateY(-10vh); }
+      to { transform: translateY(100vh); }
     }
 
     #basket {
@@ -51,7 +48,7 @@
 
     #valentineBox {
       display: none;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
       padding: 30px;
       border-radius: 20px;
       margin: 20px auto;
@@ -70,7 +67,7 @@
     }
 
     .yes {
-      background: #ff4d6d;
+      background: #ff1e56;
       color: white;
     }
 
@@ -83,19 +80,38 @@
     button:hover {
       transform: scale(1.1);
     }
+
+    /* HAND HEART EXPLOSION */
+    .hand-heart {
+      position: fixed;
+      font-size: 40px;
+      animation: explode 2.5s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes explode {
+      0% {
+        transform: scale(0.2) translate(0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.5) translate(var(--x), var(--y));
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <h1>💗 Catch the Falling Hearts 💗</h1>
+  <h1>❤️ Catch the Falling Hearts ❤️</h1>
   <div id="score">Hearts Collected: 0 / 10</div>
 
   <div id="basket">🧺</div>
 
   <div id="valentineBox">
-    <h2>Will you be my Valentine? 💘</h2>
-    <button class="yes" onclick="yesClicked()">YES 💕</button>
+    <h2>Dip, will you be my Valentine? 💘</h2>
+    <button class="yes" onclick="yesClicked()">YES ❤️</button>
     <button class="no" onmouseover="moveNo()">NO 😜</button>
   </div>
 
@@ -103,7 +119,6 @@
     let score = 0;
     const basket = document.getElementById("basket");
 
-    // Move basket with finger or mouse
     document.addEventListener("mousemove", e => {
       basket.style.left = e.clientX + "px";
     });
@@ -115,11 +130,10 @@
     function createHeart() {
       const heart = document.createElement("div");
       heart.className = "heart";
-      heart.innerHTML = "💖";
+      heart.innerHTML = "❤️";
 
       heart.style.left = Math.random() * 90 + "vw";
       heart.style.animationDuration = (3 + Math.random() * 2) + "s";
-      heart.style.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
 
       document.body.appendChild(heart);
 
@@ -161,11 +175,34 @@
 
     function yesClicked() {
       document.body.innerHTML = `
-        <h1 style="margin-top:40vh; color:white;">
-          YAY 💞💞💞 <br>
-          Happy Valentine’s Day 🌹
+        <h1 style="margin-top:15vh; color:white;">
+          YAYYYYY ❤️💞❤️
         </h1>
+        <p style="color:white; font-size:22px; padding:20px;">
+          Dip, you are my favorite person, my safe place,  
+          and my biggest smile. 🥺💖 <br><br>
+          Every heart I caught here was already yours. ❤️  
+          Happy Valentine’s Day, my love. 🌹✨
+        </p>
       `;
+
+      for (let i = 0; i < 30; i++) {
+        const hand = document.createElement("div");
+        hand.className = "hand-heart";
+        hand.innerHTML = "🫶";
+
+        hand.style.left = "50%";
+        hand.style.top = "50%";
+
+        const x = (Math.random() - 0.5) * 600 + "px";
+        const y = (Math.random() - 0.5) * 600 + "px";
+
+        hand.style.setProperty("--x", x);
+        hand.style.setProperty("--y", y);
+
+        document.body.appendChild(hand);
+        setTimeout(() => hand.remove(), 2500);
+      }
     }
   </script>
 
